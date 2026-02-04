@@ -1,0 +1,42 @@
+# @package _global_
+# Speech Commands dataset configuration for spikingssm
+# Based on s4-sc.yaml, adapted for spikingssm model
+defaults:
+  - /pipeline: sc
+  - override /scheduler: cosine_warmup
+
+scheduler:
+  num_training_steps: 200000  # 40 epochs (based on s4-sc.yaml)
+  num_warmup_steps: 20000  # 10% warmup, consistent with other experiments
+
+model:
+  _name_: loongspikingssm
+  dropout: 0.0
+  n_layers: 6
+  prenorm: true
+  d_model: 128  # Same as s4-sc.yaml
+  norm: batch
+  layer:
+    d_state: 32
+    lr: 0.001
+    dt_min: 0.001
+    dt_max: 0.1
+    bidirectional: true
+    learnable_vth: true
+    shared_vth: false
+    trainable_B: false
+
+loader:
+  batch_size: 16  # Same as s4-sc.yaml
+
+optimizer:
+  lr: 0.01  
+  weight_decay: 0.01  
+
+trainer:
+  max_epochs: 40  
+
+train:
+  seed: 2222  # Same as s4-sc.yaml
+  interval: step # For cosine scheduler
+
