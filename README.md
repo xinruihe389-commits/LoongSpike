@@ -126,7 +126,7 @@ K_α(t) ≈ Σ w_m exp(-λ_m t)
 This codebase builds upon and references implementations from:
 
 - **[S4 (Structured State Spaces)](https://github.com/state-spaces/s4)** (Apache License 2.0): State space model architecture, kernel computation, and training infrastructure
-- **[SpikingSSM](https://github.com/shenshuaijie/SDN)** (MIT License): Spiking neural network integration with state space models
+- **[SpikingSSMs](https://github.com/shenshuaijie/SDN)** (MIT License): Spiking neural network integration with state space models
 
 We thank the authors for open-sourcing their code, which provided the foundation for our fractional-order extensions.
 
@@ -138,4 +138,5 @@ This project is licensed under the **Apache License 2.0**. See [LICENSE](LICENSE
 
 Portions of this code are derived from:
 - **S4** (Apache License 2.0) - See [LICENSE-APACHE](LICENSE-APACHE)
-- **SpikingSSM** (MIT License) - See [LICENSE-MIT](LICENSE-MIT)
+- **SpikingSSMs** (MIT License) - See [LICENSE-MIT](LICENSE-MIT)
+
